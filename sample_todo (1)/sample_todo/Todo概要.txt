@@ -1,0 +1,42 @@
+■環境構築
+DBはMySQL
+/src/main/java/com/TodoList/app/Model/DAO/TodoListDAO.javaのメンバ変数USERとPASSを変更する
+SQLを実行
+
+■構成
+1.SpringBootでは下記のディレクトリ構成が多いみたい
+/src/main/java/com/アプリ名/
+・controller
+・service
+・repository
+・config
+・dao
+・entity
+・dto
+/src/main/resources/
+・templates（html）
+・static　（css,js）
+・application.properties（C#のApp.config）
+
+
+2. 課題での構成
+/src/main/java/com/sampleTodoList
+      ┣ Controller
+      ┗ Model
+          ┣ DAO
+          ┗ DTO
+
+Modelディレクトリがあることは多くないが、MVCモデルをイメージしてもらうために作成
+
+3.DTO、Entity、Beanについて
+結局のところ中身は一緒でメンバ変数＋Getter、Setterメソッドを書くクラス
+用途によって使い分けるのが一般的だが、データのやりとりが複雑ではないアプリでは、
+どれか１つを使い回すことも多い、用途についても様々な派閥があり混乱する可能性があるので
+課題ではDTO(Bean)のみの採用とする
+BeanについてはJava独自であり、中身や使い方はDTOやEntityと同じで、命名規則は○○Bean.javaもしくは○○.java
+多いのは
+・DTOもしくはBeanのみ（○○DTOや○○Bean.javaじゃなくて○○.javaとなっていることもある）
+・DTO + Bean
+・DTO + Entity
+課題レベルではDTO(Bean)＋Entityを表現することが難しいためDTO(Bean)のみの採用とする
+ただし知っておいた方がいいことではあるので、課題終了後に上のディレクトリ構成含めやる予定

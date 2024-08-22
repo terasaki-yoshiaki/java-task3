@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+function check() {
+	let result1 = todoCheck();
+	document.getElementById("validate_msg1").innerHTML = result1;
+	let result2 = placeCheck();
+	document.getElementById("validate_msg2").innerHTML = result2;
+	let result3 = datetimeCheck();
+	document.getElementById("validate_msg3").innerHTML = result3;
+	if (result1 != "" || result2 != "" || result3 != "") {
+		return false;
+	}
+	return true;
+}
+
+function todoCheck() {
+	let validate = "";
+	if (document.getElementById("Todo").value == "") {
+		validate = "必須項目です。入力してください。";
+	}
+	return validate;
+}
+
+function placeCheck() {
+	let validate = "";
+	if (document.getElementById("Place").value == "") {
+		validate = "必須項目です。入力してください。";
+	}
+	return validate;
+}
+function datetimeCheck() {
+	let validate = "";
+	if (document.getElementById("Datetime").value == "") {
+		validate = "必須項目です。入力してください。";
+	}
+	return validate;
+}
